@@ -26,8 +26,11 @@
 
   Define as "long long" when local problem dimension is > 2^31
 */
+#ifdef HPCG_NO_LONG_LONG
 typedef int local_int_t;
-//typedef long long local_int_t;
+#else
+typedef long long local_int_t;
+#endif
 
 /*!
   This defines the type for integers that have global dimension
